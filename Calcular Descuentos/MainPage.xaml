@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Calcular_Descuentos.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+
+            <Label FontSize="Medium" VerticalOptions="Center" Text="Valor Inicial" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" BackgroundColor="LightBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Entry x:Name="valorinicial"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"  Keyboard="Numeric" FontSize="Large" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"></Entry>
+            <Label  FontSize="Medium" VerticalOptions="Center" Text="Descuento" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1"></Label>
+            <Entry x:Name="descuento" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="%" Keyboard="Numeric" FontSize="Large" Grid.Row="3" Grid.Column="1"></Entry>
+
+
+            <Label  FontSize="Medium"   Text="Valor Final" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+            <Label x:Name="Valorfinal" FontSize="Large" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+            <Label  FontSize="Medium" Text="Monto decontado" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+            <Label x:Name="Valordescontado"  FontSize="Large" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+
+
+            <Button x:Name="aplicar" Text="Aplicar"  Clicked="Aplicar_Clicked" Grid.Row="6" Grid.Column="1"></Button>
+            <Button x:Name="borrar" Text="Borrar"  Clicked="borrar_Clicked"  Grid.Row="6" Grid.Column="2"></Button>
+            </Grid>
+       
+
+    </StackLayout>
+
+</ContentPage>
