@@ -4,7 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Calcular_Descuentos.MainPage">
+             x:Class="Calcular_Descuentos.MainPage"
+                          >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" Priority="0" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="stlMainFrame" TargetType="Frame">
@@ -14,15 +20,15 @@
             </Style>
 
             <Style x:Key="stlContactBtn" TargetType="Button">
-                <Setter Property="TranslationY"     Value="-50"/>
-                <Setter Property="TranslationX"     Value="45"/>
+                <Setter Property="TranslationY"     Value="-40"/>
+                <Setter Property="TranslationX"     Value="80"/>
                 <Setter Property="BackgroundColor"  Value="#2193f3"/>
                 <Setter Property="WidthRequest"     Value="56"/>
                 <Setter Property="HeightRequest"    Value="56"/>
                 <Setter Property="CornerRadius"     Value="28"/>
             </Style>
 
-            <Style x:Key="stlBoardTitle" TargetType="Label">
+            <Style x:Key="]" TargetType="Label">
                 <Setter Property="Padding"           Value="0,30,0,5"/>
                 <Setter Property="TextColor"         Value="#a5a2a2"/>
                 <Setter Property="FontSize"          Value="16"/>
@@ -37,17 +43,20 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid BackgroundColor="LightGreen">
+    
+
+    <Grid BackgroundColor="LightGreen" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-
         </Grid.RowDefinitions>
 
 
         <StackLayout>
-            <Grid Padding="25,10,25,0" RowSpacing="0">
+            <Grid Padding="-20,0,0,0" RowSpacing="0">
+                <!--<Button Grid.Row="1" Grid.Column="1" Style="{StaticResource stlContactBtn}" HorizontalOptions="End"   ImageSource="Phone"/>-->
+                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource stlContactBtn}" HorizontalOptions="Start" ImageSource="baseline_info_black_18dp.png"/>
                 <!-- <Label  FontSize="Medium"   Text="Valor Final" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="0"></Label>-->
-                <Label x:Name="Valorfinal" FontAttributes="Bold" FontSize="46" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ></Label>
+                <Label x:Name="Valorfinal" FontAttributes="Bold"  TextColor="White" FontSize="46" Text="{Binding Source={x:Reference Valorfinal}, Path=Value, StringFormat=''}" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ></Label>
                 <Label x:Name="eltotal" FontSize="20" Text=""  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
                 <Label x:Name="Valordescontado" FontAttributes="Bold" FontSize="35" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></Label>
                 <Label x:Name="porlotanto" BindingContext="" FormattedText="$" FontSize="20" Text="por lo tanto pagas un"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></Label>
@@ -60,7 +69,7 @@
 
 
         <!-- 2. Contact informaqtion frame-->
-        <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
+        <StackLayout Grid.Row="0" BackgroundColor="Gray" VerticalOptions="End">
             <Frame CornerRadius="40" Style="{StaticResource stlMainFrame}" >
                 <!-- Blocks: 3 and 4 -->
                 <Grid Padding="25,10,25,0" RowSpacing="0">
@@ -78,6 +87,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <!-- 3. Phone & message buttons-->
+                   
                     <!-- 4. Contact information-->
                     <!--<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Katty White" FontAttributes="Bold" FontSize="30"/>-->
                     <!--<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Medium" VerticalOptions="Center" Text="Valor Inicial" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>-->

@@ -79,5 +79,10 @@ namespace Calcular_Descuentos
             eltotal.Text = "";
             porlotanto.IsVisible = false;
         }
+
+        async void AddItem_Clicked(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
