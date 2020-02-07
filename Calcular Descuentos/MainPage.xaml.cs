@@ -53,11 +53,11 @@ namespace Calcular_Descuentos
                     if( valorinicial.Text.Length >= 6)
                     {
                         Valorfinal.FontSize = 36;
-                        Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("0.00");
-                        Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("0.00");
-
-                        eltotal.Text = "El " + descuento.Text + "% de " + valorinicial.Text + " es: ";
-                    }                    
+                       
+                    }else
+                    {
+                        Valorfinal.FontSize = 46;
+                    }                  
                         
                     Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("0.00");
                     Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("0.00");
@@ -77,7 +77,7 @@ namespace Calcular_Descuentos
             Valordescontado.Text = "";
             descuento.Text = "";
             eltotal.Text = "";
-            porlotanto.Text = "";
+            porlotanto.IsVisible = false;
         }
     }
 }
