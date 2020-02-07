@@ -22,6 +22,7 @@ namespace Calcular_Descuentos
             Valordescontado.Text = "";
             descuento.Text = "";
             eltotal.Text = "";
+            porlotanto.IsVisible = false;
         }
 
 
@@ -29,21 +30,43 @@ namespace Calcular_Descuentos
 
         public async void Aplicar_Clicked(object sender, EventArgs e)
         {
+
            
+
             if (valorinicial.Text == "")
             {
-                await DisplayAlert("Valor invalido", "Ingresa Valor inicial", "OK");
+                await DisplayAlert("Faltan Valores", "Ingresa un monto inicial", "OK");
             }
-            else if ( descuento.Text == "")
+            else if ( descuento.Text == ""  )
             {
-                await DisplayAlert("Valor invalido", "Ingresa el monto a descontar", "OK");
+                await DisplayAlert("Faltan valores", "Ingresa un valor en Descuento", "OK");
             }
             else
             {
-                Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString();
-                Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text)-float.Parse(Valordescontado.Text)).ToString();
+                int descuento2 = Int32.Parse(descuento.Text);
+                if (descuento2 > 100 || descuento2 < 0)
+                {
+                    await DisplayAlert("Porcentaje invalido", "Ingresa una cantidad entre 0 a 100", "OK");
+                }
+                else
+                {
+                    if( valorinicial.Text.Length >= 6)
+                    {
+                        Valorfinal.FontSize = 36;
+                        Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("0.00");
+                        Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("0.00");
 
-                eltotal.Text = "El " + descuento.Text + "% de " + valorinicial.Text + " es: ";
+                        eltotal.Text = "El " + descuento.Text + "% de " + valorinicial.Text + " es: ";
+                    }                    
+                        
+                    Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("0.00");
+                    Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("0.00");
+
+                    eltotal.Text = "El " + descuento.Text + "% de " + valorinicial.Text + " es: ";
+                    porlotanto.IsVisible = true;
+                }
+
+                
             }            
         }
 
@@ -53,6 +76,8 @@ namespace Calcular_Descuentos
             Valorfinal.Text = "";
             Valordescontado.Text = "";
             descuento.Text = "";
+            eltotal.Text = "";
+            porlotanto.Text = "";
         }
     }
 }

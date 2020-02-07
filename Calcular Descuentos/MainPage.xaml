@@ -40,22 +40,24 @@
     <Grid BackgroundColor="LightGreen">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            
+
         </Grid.RowDefinitions>
-        
+
 
         <StackLayout>
             <Grid Padding="25,10,25,0" RowSpacing="0">
-             <!-- <Label  FontSize="Medium"   Text="Valor Final" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="0"></Label>-->
-             <Label x:Name="Valorfinal" FontAttributes="Bold" FontSize="56" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" ></Label>
-                <Label x:Name="eltotal" FontSize="25" Text=""  HorizontalOptions="Center" VerticalOptions="FillAndExpand"  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-             <Label x:Name="Valordescontado" FontAttributes="Bold" FontSize="35" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+                <!-- <Label  FontSize="Medium"   Text="Valor Final" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="0"></Label>-->
+                <Label x:Name="Valorfinal" FontAttributes="Bold" FontSize="46" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" ></Label>
+                <Label x:Name="eltotal" FontSize="20" Text=""  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+                <Label x:Name="Valordescontado" FontAttributes="Bold" FontSize="35" Text="" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+                <Label x:Name="porlotanto" BindingContext="" FormattedText="$" FontSize="20" Text="por lo tanto pagas un"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+
             </Grid>
         </StackLayout>
 
         <!-- 1. Profile picture-->
-        
-        
+
+
 
         <!-- 2. Contact informaqtion frame-->
         <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
@@ -105,7 +107,7 @@
                     <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="descuento" Placeholder="Descuento" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="%" Keyboard="Numeric" FontSize="Large" ></Entry>
 
 
-                    
+
 
                     <!-- <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" TextColor="White" BackgroundColor="#2193f3" Text="Follow" Margin="0,20,0,2" FontAttributes="Bold" FontSize="17" HeightRequest="45"/>-->
                     <Button Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" TextColor="White" BackgroundColor="#2193f3" x:Name="aplicar"  Text="Aplicar"  Margin="0,20,0,2" FontAttributes="Bold" FontSize="17" HeightRequest="45" Clicked="Aplicar_Clicked" ></Button>
@@ -114,11 +116,11 @@
             </Frame>
         </StackLayout>
 
-      
+
 
 
     </Grid>
 
-   
+
 
 </ContentPage>
