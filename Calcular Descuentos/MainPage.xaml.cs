@@ -80,9 +80,11 @@ namespace Calcular_Descuentos
             porlotanto.IsVisible = false;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+       
+
+        private async void AddItem_Clicked(object sender, EventArgs e)
         {
-            
+            await Navigation.PushAsync(new Infor());
         }
     }
 }
