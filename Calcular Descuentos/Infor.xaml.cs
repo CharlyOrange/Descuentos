@@ -16,10 +16,5 @@ public partial class Infor : ContentPage
     {
             InitializeComponent();
     }
-
-        private void Paymen_clicked(object sender, EventArgs e)
-        {
-			
-		}
-    }
+}
 }
