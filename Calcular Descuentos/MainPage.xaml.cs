@@ -13,7 +13,7 @@ namespace Calcular_Descuentos
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private const double MinWidth = 720;
+        
 
         public MainPage()
         {
@@ -24,10 +24,23 @@ namespace Calcular_Descuentos
             descuento.Text = "";
             eltotal.Text = "";
             porlotanto.IsVisible = false;
+
+
+            this.SizeChanged += MainPageSizeChanged;
         }
 
-
-
+        private void MainPageSizeChanged(object sender, EventArgs e)
+        {
+            if (this.Width > this.Height)
+            {
+                mainStack.Orientation = StackOrientation.Horizontal;
+            }
+            else
+            {
+                this.mainStack.Orientation = StackOrientation.Vertical;
+            }
+                
+        }
 
         public async void Aplicar_Clicked(object sender, EventArgs e)
         {
@@ -45,9 +58,9 @@ namespace Calcular_Descuentos
             else
             {
                 int descuento2 = Int32.Parse(descuento.Text);
-                if (descuento2 > 100 || descuento2 < 0)
+                if (descuento2 > 100 || descuento2 <= 0)
                 {
-                    await DisplayAlert("Porcentaje invalido", "Ingresa una cantidad entre 0 a 100", "OK");
+                    await DisplayAlert("Porcentaje invalido", "Ingresa una cantidad entre 1 a 100", "OK");
                 }
                 else
                 {
