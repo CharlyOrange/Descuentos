@@ -13,6 +13,7 @@ namespace Calcular_Descuentos
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private const double MinWidth = 720;
 
         public MainPage()
         {
@@ -26,18 +27,18 @@ namespace Calcular_Descuentos
         }
 
 
-               
+
 
         public async void Aplicar_Clicked(object sender, EventArgs e)
         {
 
-           
+
 
             if (valorinicial.Text == "")
             {
                 await DisplayAlert("Faltan Valores", "Ingresa un monto inicial", "OK");
             }
-            else if ( descuento.Text == ""  )
+            else if (descuento.Text == "")
             {
                 await DisplayAlert("Faltan valores", "Ingresa un valor en Descuento", "OK");
             }
@@ -50,24 +51,25 @@ namespace Calcular_Descuentos
                 }
                 else
                 {
-                    if( valorinicial.Text.Length >= 6)
+                    if (valorinicial.Text.Length >= 6)
                     {
                         Valorfinal.FontSize = 36;
-                       
-                    }else
+
+                    }
+                    else
                     {
                         Valorfinal.FontSize = 46;
-                    }                  
-                        
-                    Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("0.00");
-                    Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("0.00");
+                    }
+
+                    Valordescontado.Text = (float.Parse(descuento.Text) * float.Parse(valorinicial.Text) / 100).ToString("###,###,###.##");
+                    Valorfinal.Text = "Total " + (float.Parse(valorinicial.Text) - float.Parse(Valordescontado.Text)).ToString("$###,###,###,###.##");
 
                     eltotal.Text = "El " + descuento.Text + "% de " + valorinicial.Text + " es: ";
                     porlotanto.IsVisible = true;
                 }
 
-                
-            }            
+
+            }
         }
 
         private void Borrar_Clicked(object sender, EventArgs e)
@@ -80,11 +82,12 @@ namespace Calcular_Descuentos
             porlotanto.IsVisible = false;
         }
 
-       
+
 
         private async void AddItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Infor());
         }
+
     }
 }
